@@ -1,0 +1,22 @@
+<h1 class="bg-primary-subtle text-primary text-center my-5 ">Users</h1>
+
+<div class="container bg-primary-subtle">
+    <form class="form-inline py-2 w-100">
+        <input type="search" class="form-control " placeholder="Search Users" [(ngModel)]="search" name="nameInput" />
+    </form>
+    <div class="row row-cols-1 row-cols-md-3">
+        <div *ngFor="let user of users; let i = index">
+            <div *ngIf="user.Fname.toLowerCase().includes(search.toLowerCase()) || user.Lname.toLowerCase().includes(search.toLowerCase())">
+                <div class="card my-2">
+                    <div class="card-body">
+                        <p>{{i + 1}}</p>
+                        <h4>Name : {{user.Fname}} {{user.Lname}}</h4>
+                        <p>Age : {{user.age}}</p>
+                        <p>Address : {{user.address}}</p>
+                        <p>Phone : {{user.phone}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
