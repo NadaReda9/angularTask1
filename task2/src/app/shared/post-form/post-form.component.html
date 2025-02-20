@@ -1,0 +1,16 @@
+<p>post-form works!</p>
+<form class="bg-primary-subtle p-3 rounded-3">
+    <div class="mb-3">
+      <label for="name" class="form-label">User Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Name"  [(ngModel)]="post.userName" name="userName">
+    </div>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input  id="title" type="text" placeholder="write a title" class="form-control" [(ngModel)]="post.title" name="title">
+    </div> 
+    <div class="form-floating">
+        <textarea class="form-control" id="floatingTextarea" [(ngModel)]="post.caption" name="caption">Caption</textarea>
+        <label for="floatingTextarea">Caption</label>
+      </div>
+    <button type="submit" class="btn btn-primary m-3 " (click)="submitPost()"> Add </button>
+  </form>
